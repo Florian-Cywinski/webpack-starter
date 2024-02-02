@@ -7,4 +7,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),  // __dirname, 'dist' -> from the current directory we want to point to the dist folder - so the path for output = dist folder
     filename: 'bundle.js',  // To change the file name if we want - by default it is main.js
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/, // To check for every file that ends with .css
+        use: ['style-loader', 'css-loader'],  // To apply the style loader and the css loader we've installed
+      },
+    ],
+  },
 };
