@@ -24,6 +24,16 @@ module.exports = {
         test: /\.css$/, // To check for every file that ends with .css
         use: ['style-loader', 'css-loader'],  // To apply the style loader and the css loader we've installed
       },
+      {
+        test: /\.js$/,  // To check for every file that ends with .js
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      }
     ],
   },
   plugins: [
