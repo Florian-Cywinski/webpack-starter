@@ -1,4 +1,5 @@
 const path = require('path');   // To import (require()) the node.js build in 'path' module (to use absolute pathnames etc.)
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // To import (require()) the node.js build in 'html-webpack-plugin' module 
 
 module.exports = {
   mode: 'development',
@@ -15,4 +16,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Webpack App',
+      filename: 'index.html',
+      template: './src/index.html',
+    }),
+  ],
 };
